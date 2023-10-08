@@ -1,0 +1,8 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": false,
+	"prettier.singleQuote": false,
+	"prettier.tabWidth": 4,
+	"thunder-client.indentSize": 4,
+	"prettier.jsxSingleQuote": true
+}

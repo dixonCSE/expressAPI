@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"prettier.tabWidth": 4,
+		"prettier.useEditorConfig": false,
+		"prettier.trailingComma": "all",
+		"prettier.useTabs": true,
+		"liveServer.settings.multiRootWorkspaceName": "express",
+		"php.validate.enable": false,
+		"php.suggest.basic": false,
+		"editor.autoClosingQuotes": "languageDefined",
+		"javascript.preferences.quoteStyle": "single",
+		"markdown.preview.typographer": false,
+		"json.format.enable": true,
+		"javascript.format.enable": true,
+		"eslint.format.enable": true,
+		"prettier.jsxSingleQuote": true
+	}
+}
