@@ -212,9 +212,6 @@ const getRows = async (config) => {   // table:string, filter:obj, searchKey:str
 const insertRow = async (config) => {
 	let sqlStr = "";
 	let i = 0;
-	let fType;
-	let tmpType;
-	fType = typeof config.filter;
 
 	sqlStr += `INSERT INTO \`${config.table}\` ( `;
 

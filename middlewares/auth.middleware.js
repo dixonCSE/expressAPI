@@ -31,48 +31,26 @@ const auth = async (req, res, next) => {
 	}
 };
 
-const roleCheck = async (role, req, res, next) => {
-	//role = "user";
-
-	let userRole = CryptoJS.AES.decrypt(
-		req.user.role,
-		process.env.SECURITY_PRIVATE_KEY,
-	).toString(CryptoJS.enc.Utf8);
-
-	if (role == userRole) {
-		next();
-	} else {
-		res.status(200).json({
-			error: true,
-			logout: false,
-			message: "Access Denied: Invalid role authorization token",
-		});
+const roleCheck = (role) => {
+	return (req, res, next) => {
+		let userRole = CryptoJS.AES.decrypt(
+			req.user.role,
+			process.env.SECURITY_PRIVATE_KEY,
+		).toString(CryptoJS.enc.Utf8);
+	
+		if (role == userRole) {
+			next();
+		} else {
+			res.status(200).json({
+				error: true,
+				logout: false,
+				message: "Access Denied: Invalid role authorization token",
+			});
+		}
 	}
 };
-
-const userRoleCheck = async (req, res, next) => {
-	role = "user";
-
-	let userRole = CryptoJS.AES.decrypt(
-		req.user.role,
-		process.env.SECURITY_PRIVATE_KEY,
-	).toString(CryptoJS.enc.Utf8);
-
-	if (role == userRole) {
-		next();
-	} else {
-		res.status(200).json({
-			error: true,
-			logout: false,
-			message: "Access Denied: Invalid role authorization token",
-		});
-	}
-};
-
-// module.exports = auth;
 
 module.exports = {
 	auth,
 	roleCheck,
-	userRoleCheck,
 };
