@@ -353,7 +353,7 @@ router.get(
 			let obj = {
 				table: "user",
 				filter: {
-					"id >": 11,
+					"id >": 100000,
 					"id <=": 111111,
 				},
 			};
